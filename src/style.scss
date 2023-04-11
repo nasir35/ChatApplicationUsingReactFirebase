@@ -1,0 +1,325 @@
+//Colors
+$bgColor : rgb(140, 171, 237);
+$placeholderColor : rgb(175, 175, 175);
+$textColor : #5d5b8d;
+
+
+.formContainer{
+    background-color: $bgColor;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .formWrapper{
+        background-color: white;
+        padding: 20px 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        border-radius: 10px;
+        .logo{
+            color: $textColor;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .title{
+            color: $textColor;
+            font-size: 12px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+            input{
+                width: 250px;
+                padding: 15px;
+                border: none;
+                border-bottom: 1px solid #9b98ef;
+                &::placeholder{
+                    color: $placeholderColor;
+                }
+            }
+            .labelAndPreview{
+                display: flex;
+                gap: 10px;
+                justify-content: space-between;
+                label{
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #848393;
+                    img{
+                        width: 32px;
+                    }
+                }
+                #userImg{
+                    width: 80px;
+                    height: 80px;
+                    object-fit: cover;
+                }
+            }
+            button{
+                border: none;
+                background-color: $bgColor;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                padding: 10px 40px;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            .err{
+                color: red;
+            }
+        }
+        p{
+            color: $textColor;
+        }
+    }
+}
+
+.homeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgColor;
+    height: 100vh;
+
+    .homeWrapper{
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 65%;
+        height: 80%;
+        background-color: #fff;
+        .sidebar{
+            flex : 1;
+            .navbar{
+                background-color: #1e1d3f;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 40px;
+                padding: 10px;
+                .logo{
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #fff;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    button{
+                        border: none;
+                        cursor: pointer;
+                        background-color: #ddddf7;
+                        color: #030303;
+                        border-radius: 5px;
+                        padding: 6px 10px 4px 10px;
+                        font-weight: bold;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .search{
+                background-color: #3c3b80;
+                border-bottom: 1px solid rgb(120, 137, 143);
+                .searchContainer{
+                    input{
+                        background-color: transparent;
+                        width: 100%;
+                        padding: 10px 10px;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                        outline: none;
+                        border: none;
+                        color: #ddddf7;
+                        &::placeholder{
+                            color: lightgray;
+                        }
+                    }
+                }
+                .userInfo{
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    color: #fff;
+                    display: flex;
+                    font-weight: bold;
+                    gap: 10px;
+                    align-items: center;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .chats{
+                background-color: #3c3b80;
+                height: 100%;
+                .chatsWrapper{
+                    .userInfo{
+                        padding: 5px 10px;
+                        display: flex;
+                        gap: 10px;
+
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                        .chatInfo{
+                            display: flex;
+                            flex-direction: column;
+                            .name{
+                                color: #fff;
+                                font-weight: bold;
+                            }
+                            span{
+                                color: #ddd;
+                            }
+                        }
+                        &:hover{
+                            background-color: #1e1d3f;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        .chatPanel{
+            flex: 2;
+            .top{
+                height: 50px;
+                background-color: #3c3b80;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 10px;
+                .name{
+                    font-weight: bold;
+                    color: #fff;
+                }
+                .Icons{
+                    img{
+                        padding: 4px 8px;
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+            }
+            .messages{
+                overflow-y: scroll;
+                padding: 10px 10px;
+                height: calc(100% - 130px);
+                background-color: #ddddf7;
+
+                .messageContainer{
+                    display: flex;
+                    gap: 10px;
+                    padding: 5px;
+                    .messageInfo{
+                        display: flex;
+                        flex-direction: column;
+                        img{
+                            height: 50px;
+                            width: 50px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                        span{
+                            color: rgb(36, 35, 35);
+                        }
+                    }
+                    .messageContent{
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        p{
+                            background-color: rgb(255, 255, 255);
+                            color: #1e1d3f;
+                            padding: 5px 10px;
+                            width: max-content;
+                            border-radius: 0px 5px 5px 5px;
+                        }
+                        img{
+                            width: 300px;
+                            object-fit: cover;
+                        }
+                    }
+                    &.owner{
+                        flex-direction: row-reverse;
+                        .messageContent{
+                            align-items: flex-end;
+                            p{
+                                background-color: rgb(52, 119, 227);
+                                color: #fff;
+                                padding: 5px 10px;
+                                width: max-content;
+                                border-radius: 5px 0px 5px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .input{
+                height: 50px;
+                padding: 10px;
+                background-color: #FFF;
+               .inputContainer{
+                display: flex;
+                justify-content: space-between;
+                .inputForm{
+                    flex-grow: 1;
+                    input{
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        font-size: 18px;
+                        color: rgb(61, 61, 61);
+
+                        &::placeholder{
+                            color: lightgray;
+                        }
+                    }
+                }
+                .attachIcons{
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                    button{
+                        padding: 5px 15px;
+                        background-color: #3c3b80;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                        font-weight: bold;
+                    }
+                }
+               }
+            }
+        }
+    }
+}
