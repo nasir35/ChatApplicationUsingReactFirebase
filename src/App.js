@@ -8,12 +8,16 @@ import "./style.scss"
 
 function App() {
 
+  const { currentUser, loading } = useContext(AuthContext);
+
   const PrivateRoute = ({ children }) => {
-    const { currentUser } = useContext(AuthContext);
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    } else {
+    if(loading || currentUser === undefined){
+      return <div>Loading...</div>
+    }
+    if (currentUser?.uid) {
       return children;
+    } else {
+      return <Navigate to="/login" />;
     }
   };
 
