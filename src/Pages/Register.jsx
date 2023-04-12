@@ -4,7 +4,7 @@ import { auth, db, storage } from "../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
 import { doc, setDoc } from "firebase/firestore"; 
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Register = () => {
   const [imgPreview, setImgPreview] = useState(null);
@@ -106,7 +106,7 @@ const Register = () => {
                 {err && <span style={{color: 'red'}}>Something went wrong!</span>}
                 <button>Sign Up</button>
             </form>
-            <p>Already have an account? Log In here</p>
+            <Link to="/login" style={{textDecoration: 'none'}}><p style={{color: 'blue'}}>Already have an account? Log In here</p></Link>
         </div>
     </div>
   )
