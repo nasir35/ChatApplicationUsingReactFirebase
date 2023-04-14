@@ -51,7 +51,7 @@ const Register = () => {
         console.log(res.user);
       }
       catch(er){
-        console.log(er);
+        console.log('updste err: ',er);
       }
 
       // save user on firestore
@@ -64,19 +64,20 @@ const Register = () => {
         });
       }
       catch(err){
-        console.log(err);
+        console.log('users error: ',err);
       }
       // create an empty UserChat on firestore
       try{
         await setDoc(doc(db, "userChats", res.user.uid), {});
       }
       catch(err){
-        console.log(err);
+        console.log('userchat erro: ',err);
       }
     });
   }
 );
       setIsLoading(false);
+      navigate('/');
       navigate('/');
     }
     catch(error){
